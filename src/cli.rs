@@ -2,7 +2,7 @@ use std::env;
 
 pub fn run() {
     let args: Vec<String> = env::args().collect();
-    let command = args[1].clone();
+    let command: String = if args.len() > 1 {args[1].clone()} else {"NONE".to_string()}; // Modified from tutorial to prevent crash if no argument is passed
     let name = "User";
     let status = "0%";
 
